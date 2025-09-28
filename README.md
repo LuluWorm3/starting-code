@@ -127,6 +127,7 @@ If you finish early, try these additional challenges:
 - [CSS Tricks Guides](https://css-tricks.com/guides/)
 - [Google Fonts](https://fonts.google.com/)
 - [Color Hunt](https://colorhunt.co/) for color palette inspiration
+  [Background Animation ](https://alvarotrigo.com/blog/animated-backgrounds-css/)
 
 ## Submission
 

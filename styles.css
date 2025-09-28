@@ -1,8 +1,55 @@
+/* ==========  APPLE OS INSPIRED THEME SYSTEM ========== */
+
 /* RESET AND BASE STYLES */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Background Animation Import */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+
+/* Background Animation Keyframes */
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-moz-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@-o-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
 }
 
 :root {
@@ -15,22 +62,109 @@
   --dark: #212529;
   --gray: #6c757d;
   --light-gray: #e9ecef;
-  --white: #ffffff;
+  --white: white;
   --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
   --body-bg: #f5f7ff;
-  --card-bg: #ffffff;
+  --card-bg: white;
   --text-color: #212529;
   --border-color: #e9ecef;
+  
+  /* Apple OS Design System */
+  --apple-primary: #007AFF;
+  --apple-secondary: #5856D6;
+  --apple-success: #34C759;
+  --apple-warning: #FF9500;
+  --apple-danger: #FF3B30;
+  --apple-info: #5AC8FA;
+  
+  --apple-gray-50: #F2F2F7;
+  --apple-gray-100: #E5E5EA;
+  --apple-gray-200: #D1D1D6;
+  --apple-gray-300: #C7C7CC;
+  --apple-gray-400: #8E8E93;
+  --apple-gray-500: #636366;
+  --apple-gray-600: #48484A;
+  --apple-gray-700: #38383A;
+  --apple-gray-800: #2C2C2E;
+  --apple-gray-900: #1C1C1E;
+  
+  /* Blue Theme */
+  --blue-primary: #1E40AF;
+  --blue-secondary: #3B82F6;
+  --blue-success: #10B981;
+  --blue-warning: #F59E0B;
+  --blue-info: #06B6D4;
+  --blue-accent: #60A5FA;
+  --blue-bg: #EFF6FF;
+  --blue-surface: white;
+  --blue-text: #1E293B;
+  --blue-border: #CBD5E1;
+  
+  /* Green Theme */
+  --green-primary: #15803D;
+  --green-secondary: #22C55E;
+  --green-success: #16A34A;
+  --green-warning: #D97706;
+  --green-info: #0891B2;
+  --green-accent: #86EFAC;
+  --green-bg: #F0FDF4;
+  --green-surface: white;
+  --green-text: #065F46;
+  --green-border: #D1FAE5;
+  
+  /* Apple Design Tokens */
+  --apple-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --apple-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --apple-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  --apple-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+  --apple-shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
+  
+  --apple-radius-sm: 6px;
+  --apple-radius: 8px;
+  --apple-radius-lg: 12px;
+  --apple-radius-xl: 16px;
+  
+  --apple-spacing-xs: 4px;
+  --apple-spacing-sm: 8px;
+  --apple-spacing: 12px;
+  --apple-spacing-md: 16px;
+  --apple-spacing-lg: 20px;
+  --apple-spacing-xl: 24px;
 }
 
+/* BASE STYLES */
 body {
-  font-family: "Poppins", sans-serif;
-  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
   color: var(--text-color);
   background-color: var(--body-bg);
   padding: 20px;
   transition: var(--transition);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Default Animated Background */
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC");
+  background-repeat: repeat;
+  background-position: 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite linear;
+  -moz-animation: bg-scrolling-reverse 0.92s infinite linear;
+  -o-animation: bg-scrolling-reverse 0.92s infinite linear;
+  animation: bg-scrolling-reverse 0.92s infinite linear;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--body-bg);
+  opacity: 0.55;
+  z-index: -1;
+  pointer-events: none;
 }
 
 .container {
@@ -48,18 +182,21 @@ h1 {
   color: var(--primary);
   margin-bottom: 10px;
   font-size: 2.5rem;
+  font-weight: 600;
 }
 
 h2 {
   color: var(--secondary);
   margin: 30px 0 15px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--light-gray);
+  border-bottom: 1px solid var(--light-gray);
+  font-weight: 500;
 }
 
 h3 {
   color: var(--info);
   margin: 20px 0 10px;
+  font-weight: 500;
 }
 
 p {
@@ -68,812 +205,1453 @@ p {
 
 .section {
   background-color: var(--card-bg);
-  border-radius: 10px;
-  padding: 25px;
+  border-radius: var(--apple-radius);
+  padding: var(--apple-spacing-lg);
   margin-bottom: 30px;
-  box-shadow: var(--card-shadow);
+  box-shadow: var(--apple-shadow);
+  border: 1px solid var(--border-color);
 }
 
 .component-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: var(--apple-spacing-lg);
   margin-top: 20px;
 }
 
-/* ========== IMPLEMENT THE STYLES BELOW ========== */
+/* ========== THEME SYSTEM ========== */
 
-/* Dark theme specific overrides */
-.dark-theme .form-input,
-.dark-theme .form-select,
-.dark-theme .form-textarea {
-  /* TODO: Add dark theme form control styles */
-  /* HINT: Use background-color, color, and border-color */
+/* Background Animation Toggle */
+body.animated-bg {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC");
+  background-repeat: repeat;
+  background-position: 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite linear;
+  -moz-animation: bg-scrolling-reverse 0.92s infinite linear;
+  -o-animation: bg-scrolling-reverse 0.92s infinite linear;
+  animation: bg-scrolling-reverse 0.92s infinite linear;
 }
 
-.dark-theme .table th {
-  /* TODO: Add dark theme table header styles */
-  /* HINT: Use background-color */
+body.animated-bg::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--body-bg);
+  opacity: 0.85;
+  z-index: -1;
+  pointer-events: none;
 }
 
-.dark-theme .code-editor {
-  /* TODO: Add dark theme code editor styles */
-  /* HINT: Use background-color */
+/* LIGHT THEME (Default) */
+body.light {
+  --primary: #4361ee;
+  --secondary: #3a0ca3;
+  --success: #4cc9f0;
+  --warning: #f72585;
+  --info: #7209b7;
+  --body-bg: #f5f7ff;
+  --card-bg: white;
+  --text-color: #212529;
+  --border-color: #e9ecef;
+  --light: #f8f9fa;
+  --light-gray: #e9ecef;
+  --gray: #6c757d;
 }
+
+/* DARK THEME */
+body.dark {
+  --body-bg: var(--apple-gray-900);
+  --card-bg: var(--apple-gray-800);
+  --text-color: white;
+  --border-color: var(--apple-gray-700);
+  --light: var(--apple-gray-100);
+  --light-gray: var(--apple-gray-600);
+  --gray: var(--apple-gray-400);
+}
+
+/* BLUE THEME */
+body.blue {
+  --primary: var(--blue-primary);
+  --secondary: var(--blue-secondary);
+  --success: var(--blue-success);
+  --warning: var(--blue-warning);
+  --info: var(--blue-info);
+  --body-bg: var(--blue-bg);
+  --card-bg: var(--blue-surface);
+  --text-color: var(--blue-text);
+  --border-color: var(--blue-border);
+  --light: var(--blue-bg);
+  --light-gray: var(--blue-border);
+  --gray: color-mix(in srgb, var(--blue-text) 70%, white);
+}
+
+body.blue .panel-pull-tab {
+  background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-secondary) 100%);
+}
+
+body.blue .panel-pull-tab:hover {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--blue-primary) 80%, black) 0%, var(--blue-secondary) 100%);
+}
+
+body.blue .btn {
+  background: linear-gradient(to right, var(--blue-primary), var(--blue-secondary));
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--blue-primary) 20%, transparent);
+}
+
+body.blue .btn:hover {
+  background: linear-gradient(to right, color-mix(in srgb, var(--blue-primary) 90%, black), color-mix(in srgb, var(--blue-secondary) 90%, black));
+}
+
+body.blue .card {
+  border-color: color-mix(in srgb, var(--blue-border) 50%, transparent);
+  box-shadow: 0 4px 8px color-mix(in srgb, var(--blue-primary) 10%, transparent);
+}
+
+body.blue .card:hover {
+  box-shadow: 0 6px 12px color-mix(in srgb, var(--blue-primary) 15%, transparent);
+}
+
+body.blue .alert {
+  background-color: color-mix(in srgb, var(--blue-bg) 80%, white);
+  border-left-color: var(--blue-secondary);
+}
+
+body.blue .switch input:checked + .slider-round {
+  background-color: var(--blue-accent);
+}
+
+body.blue .progress-bar {
+  background: linear-gradient(to right, var(--blue-primary), var(--blue-secondary));
+}
+
+/* GREEN THEME */
+body.green {
+  --primary: var(--green-primary);
+  --secondary: var(--green-secondary);
+  --success: var(--green-success);
+  --warning: var(--green-warning);
+  --info: var(--green-info);
+  --body-bg: var(--green-bg);
+  --card-bg: var(--green-surface);
+  --text-color: var(--green-text);
+  --border-color: var(--green-border);
+  --light: var(--green-bg);
+  --light-gray: var(--green-border);
+  --gray: color-mix(in srgb, var(--green-text) 70%, white);
+}
+
+body.green .panel-pull-tab {
+  background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-secondary) 100%);
+}
+
+body.green .panel-pull-tab:hover {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--green-primary) 80%, black) 0%, var(--green-secondary) 100%);
+}
+
+body.green .btn {
+  background: linear-gradient(to right, var(--green-primary), var(--green-secondary));
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--green-primary) 20%, transparent);
+}
+
+body.green .btn:hover {
+  background: linear-gradient(to right, color-mix(in srgb, var(--green-primary) 90%, black), color-mix(in srgb, var(--green-secondary) 90%, black));
+}
+
+body.green .card {
+  border-color: color-mix(in srgb, var(--green-border) 50%, transparent);
+  box-shadow: 0 4px 8px color-mix(in srgb, var(--green-primary) 10%, transparent);
+}
+
+body.green .card:hover {
+  box-shadow: 0 6px 12px color-mix(in srgb, var(--green-primary) 15%, transparent);
+}
+
+body.green .alert {
+  background-color: color-mix(in srgb, var(--green-bg) 80%, white);
+  border-left-color: var(--green-secondary);
+}
+
+body.green .switch input:checked + .slider-round {
+  background-color: var(--green-accent);
+}
+
+body.green .progress-bar {
+  background: linear-gradient(to right, var(--green-primary), var(--green-secondary));
+}
+
+/* DARK + COLOR THEME COMBINATIONS */
+body.blue.dark {
+  --body-bg: color-mix(in srgb, var(--blue-primary) 95%, black);
+  --card-bg: var(--apple-gray-800);
+  --text-color: white;
+  --border-color: var(--apple-gray-700);
+  --light: var(--apple-gray-100);
+  --light-gray: var(--apple-gray-600);
+  --gray: var(--apple-gray-400);
+}
+
+body.green.dark {
+  --body-bg: color-mix(in srgb, var(--green-primary) 95%, black);
+  --card-bg: var(--apple-gray-800);
+  --text-color: white;
+  --border-color: var(--apple-gray-700);
+  --light: var(--apple-gray-100);
+  --light-gray: var(--apple-gray-600);
+  --gray: var(--apple-gray-400);
+}
+
+/* DARK THEME OVERRIDES */
+body.dark .section,
+body.dark .widget,
+body.dark .card {
+  background-color: var(--apple-gray-800);
+  border-color: var(--apple-gray-700);
+  box-shadow: var(--apple-shadow);
+}
+
+body.dark .form-input,
+body.dark .form-select,
+body.dark .form-textarea {
+  background-color: var(--apple-gray-800);
+  color: white;
+  border-color: var(--apple-gray-600);
+}
+
+body.dark .form-input:focus,
+body.dark .form-select:focus,
+body.dark .form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .table th {
+  background-color: var(--apple-gray-700);
+  color: white;
+}
+
+body.dark .code-editor {
+  background-color: var(--apple-gray-900);
+  color: white;
+  border-color: var(--apple-gray-700);
+}
+
+body.dark .code-comment { color: var(--apple-gray-500); }
+body.dark .code-selector { color: var(--primary); }
+body.dark .code-property { color: var(--secondary); }
+body.dark .code-value { color: var(--success); }
+
+/* ========== COMPONENT STYLES ========== */
 
 /* Card Styles */
 .card {
-  /* TODO: Add card styles */
-  /* HINT: Use background-color, border-radius, box-shadow, transition */
+  background-color: var(--card-bg);
+  border-radius: var(--apple-radius);
+  overflow: hidden;
+  box-shadow: var(--apple-shadow);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
 }
 
 .card:hover {
-  /* TODO: Add hover styles for card */
-  /* HINT: Use transform and box-shadow */
+  transform: translateY(-2px);
+  box-shadow: var(--apple-shadow-md);
 }
 
 .card-img {
-  /* TODO: Add card image styles */
-  /* HINT: Set width, height, and object-fit */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .card-content {
-  /* TODO: Add card content styles */
-  /* HINT: Add padding */
+  padding: var(--apple-spacing);
 }
 
 .card-title {
-  /* TODO: Add card title styles */
-  /* HINT: Set font-size, margin, and color */
+  font-size: 1.25rem;
+  margin-bottom: var(--apple-spacing-xs);
+  color: var(--text-color);
+  font-weight: 600;
 }
 
 .card-text {
-  /* TODO: Add card text styles */
-  /* HINT: Set color and margin */
+  color: var(--gray);
+  margin-bottom: var(--apple-spacing);
+  line-height: 1.5;
 }
 
 /* Button Styles */
 .btn {
-  /* TODO: Add button styles */
-  /* HINT: Use display, padding, background-color, color, border, border-radius, cursor, transition */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /*padding: 10px 10px; */
+  padding: 8px 16px;
+
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--apple-radius-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  min-height: 40px;
+  box-shadow: var(--apple-shadow-sm);
 }
 
 .btn:hover {
-  /* TODO: Add button hover styles */
-  /* HINT: Change background-color */
+  background-color: color-mix(in srgb, var(--primary) 90%, black);
+  transform: translateY(-1px);
+  box-shadow: var(--apple-shadow);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .btn-success {
-  /* TODO: Add success button styles */
-  /* HINT: Change background-color */
+  background-color: var(--success);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--success) 20% transparent);
+}
+
+.btn-success:hover {
+  background-color: color-mix(in srgb, var(--success) 90%, black);
 }
 
 .btn-warning {
-  /* TODO: Add warning button styles */
-  /* HINT: Change background-color */
+  background-color: var(--warning);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--warning) 20% transparent);
+}
+
+.btn-warning:hover {
+  background-color: color-mix(in srgb, var(--warning) 90%, black);
 }
 
 .btn-info {
-  /* TODO: Add info button styles */
-  /* HINT: Change background-color */
+  background-color: var(--info);
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--info) 20% transparent);
+}
+
+.btn-info:hover {
+  background-color: color-mix(in srgb, var(--info) 90%, black);
 }
 
 .btn-outline {
-  /* TODO: Add outline button styles */
-  /* HINT: Transparent background with border and specific text color */
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  box-shadow: none;
 }
 
 .btn-outline:hover {
-  /* TODO: Add hover styles for outline button */
-  /* HINT: Change background-color and text color */
+  background-color: var(--primary);
+  color: white;
+  box-shadow: var(--apple-shadow);
 }
 
 .btn-group {
-  /* TODO: Add button group styles */
-  /* HINT: Use display and gap */
+  display: flex;
+  gap: var(--apple-spacing-xs);
+  flex-wrap: wrap;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn i {
+  margin-right: 8px;
 }
 
 /* Chip Styles */
 .chips-container {
-  /* TODO: Add chips container styles */
-  /* HINT: Use display, flex-wrap, gap, and margin */
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--apple-spacing-xs);
+  margin: var(--apple-spacing) 0;
 }
 
 .chip {
-  /* TODO: Add chip styles */
-  /* HINT: Use display, align-items, padding, background-color, border-radius, font-size, color, and cursor */
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: var(--light);
+  border-radius: 20px;
+  font-size: 13px;
+  color: var(--gray);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid var(--light-gray);
 }
 
 .chip.active {
-  /* TODO: Add active chip styles */
-  /* HINT: Change background-color and color */
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
 }
 
 .chip i {
-  /* TODO: Add icon styles within chips */
-  /* HINT: Use margin-right */
+  margin-right: 6px;
+  font-size: 16px;
 }
 
 .chip .close {
-  /* TODO: Add close button styles within chips */
-  /* HINT: Use margin-left, cursor, and font-weight */
+  margin-left: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.chip .close:hover {
+  opacity: 1;
 }
 
 /* Slider Styles */
 .slider-container {
-  /* TODO: Add slider container styles */
-  /* HINT: Use margin */
+  margin: var(--apple-spacing) 0;
 }
 
 .slider {
-  /* TODO: Add slider styles */
-  /* HINT: Use appearance, width, height, border-radius, background, and outline */
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--light-gray);
+  outline: none;
+  transition: background 0.2s ease;
+}
+
+.slider:hover {
+  background: color-mix(in srgb, var(--light-gray) 80% var(--gray));
 }
 
 .slider::-webkit-slider-thumb {
-  /* TODO: Add slider thumb styles */
-  /* HINT: Use appearance, width, height, border-radius, background, cursor, and transition */
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--apple-shadow);
 }
 
 .slider::-webkit-slider-thumb:hover {
-  /* TODO: Add hover styles for slider thumb */
-  /* HINT: Use background and transform */
+  background: color-mix(in srgb, var(--primary) 90%, black);
+  transform: scale(1.1);
+}
+
+.slider::-webkit-slider-thumb:active {
+  transform: scale(0.95);
 }
 
 .slider-value {
-  /* TODO: Add slider value styles */
-  /* HINT: Use text-align, font-weight, and color */
+  text-align: center;
+  font-weight: 500;
+  color: var(--primary);
+  margin-top: var(--apple-spacing-xs);
 }
 
 /* Switch Styles */
 .switch-container {
-  /* TODO: Add switch container styles */
-  /* HINT: Use display, align-items, and margin */
+  display: flex;
+  align-items: center;
+  gap: var(--apple-spacing);
+  margin: var(--apple-spacing) 0;
 }
 
 .switch {
-  /* TODO: Add switch styles */
-  /* HINT: Use position, display, width, height, and margin-right */
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+  margin-right: var(--apple-spacing);
 }
 
 .switch input {
-  /* TODO: Add switch input styles */
-  /* HINT: Use opacity, width, and height */
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider-round {
-  /* TODO: Add slider round styles */
-  /* HINT: Use position, cursor, top/left/right/bottom properties, background-color, transition, and border-radius */
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--light-gray);
+  transition: var(--transition);
+  border-radius: 14px;
+  box-shadow: var(--apple-shadow-sm);
 }
 
 .slider-round:before {
-  /* TODO: Add slider round before element styles */
-  /* HINT: Use position, content, height, width, left, bottom, background-color, transition, and border-radius */
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: var(--transition);
+  border-radius: 50%;
+  box-shadow: var(--apple-shadow);
 }
 
 input:checked + .slider-round {
-  /* TODO: Add checked slider round styles */
-  /* HINT: Change background-color */
+  background-color: var(--primary);
 }
 
 input:checked + .slider-round:before {
-  /* TODO: Add checked slider round before element styles */
-  /* HINT: Use transform with translateX */
+  transform: translateX(22px);
 }
 
 /* List Styles */
 .list {
-  /* TODO: Add list styles */
-  /* HINT: Use list-style-type, background-color, border-radius, overflow, and box-shadow */
+  list-style-type: none;
+  background-color: var(--card-bg);
+  border-radius: var(--apple-radius);
+  overflow: hidden;
+  box-shadow: var(--apple-shadow);
+  border: 1px solid var(--border-color);
 }
 
 .list-item {
-  /* TODO: Add list item styles */
-  /* HINT: Use padding, border-bottom, display, align-items, cursor, and transition */
+  padding: var(--apple-spacing);
+  border-bottom: 1px solid var(--light-gray);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
 .list-item:last-child {
-  /* TODO: Add styles for last list item */
-  /* HINT: Remove border-bottom */
+  border-bottom: none;
 }
 
 .list-item:hover {
-  /* TODO: Add hover styles for list items */
-  /* HINT: Change background-color */
+  background-color: color-mix(in srgb, var(--light) 80% var(--primary));
+}
+
+.list-item.active {
+  background-color: color-mix(in srgb, var(--primary) 10% transparent);
 }
 
 .list-item i {
-  /* TODO: Add icon styles in list items */
-  /* HINT: Use margin-right and color */
+  margin-right: var(--apple-spacing);
+  color: var(--gray);
+  font-size: 18px;
+  width: 20px;
+  text-align: center;
 }
 
 .list-item .avatar {
-  /* TODO: Add avatar styles in list items */
-  /* HINT: Use width, height, border-radius, margin-right, and object-fit */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: var(--apple-spacing);
+  object-fit: cover;
 }
 
 /* Form Styles */
 .form-group {
-  /* TODO: Add form group styles */
-  /* HINT: Add margin-bottom */
+  margin-bottom: var(--apple-spacing-lg);
 }
 
 .form-label {
-  /* TODO: Add form label styles */
-  /* HINT: Use display, margin, and font-weight */
+  display: block;
+  margin-bottom: var(--apple-spacing-xs);
+  font-weight: 500;
+  color: var(--gray);
+  font-size: 14px;
 }
 
-.form-input {
-  /* TODO: Add form input styles */
-  /* HINT: Use width, padding, border, border-radius, font-size, transition */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: var(--apple-spacing-xs) var(--apple-spacing);
+  border: 1px solid var(--border-color);
+  border-radius: var(--apple-radius-sm);
+  font-size: 16px;
+  transition: var(--transition);
+  background-color: white;
+  min-height: 40px;
 }
 
-.form-input:focus {
-  /* TODO: Add focus styles for form inputs */
-  /* HINT: Use outline, border-color, and box-shadow */
-}
-
-.form-select {
-  /* TODO: Add form select styles */
-  /* HINT: Similar to form-input, with additional background-color */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 10% transparent);
 }
 
 .form-textarea {
-  /* TODO: Add textarea styles */
-  /* HINT: Similar to form-input, with additional min-height and resize properties */
+  min-height: 100px;
+  resize: vertical;
 }
 
 /* Table Styles */
 .table-container {
-  /* TODO: Add table container styles */
-  /* HINT: Use overflow-x and margin */
+  overflow-x: auto;
+  margin: var(--apple-spacing) 0;
 }
 
 .table {
-  /* TODO: Add table styles */
-  /* HINT: Use width, border-collapse, border-spacing */
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: var(--card-bg);
+  border-radius: var(--apple-radius);
+  overflow: hidden;
+  box-shadow: var(--apple-shadow);
+  border: 1px solid var(--border-color);
 }
 
 .table th,
 .table td {
-  /* TODO: Add table cell styles */
-  /* HINT: Use padding, text-align, border-bottom */
+  padding: var(--apple-spacing);
+  text-align: left;
+  border-bottom: 1px solid var(--light-gray);
 }
 
 .table th {
-  /* TODO: Add table header styles */
-  /* HINT: Use background-color, font-weight, cursor */
+  background-color: var(--light);
+  font-weight: 500;
+  color: var(--gray);
+  cursor: pointer;
+  position: sticky;
+  top: 0;
 }
 
 .table th:hover {
-  /* TODO: Add hover styles for table headers */
-  /* HINT: Change background-color */
+  background-color: color-mix(in srgb, var(--light) 80% var(--primary));
 }
 
 .table tr {
-  /* TODO: Add table row styles */
-  /* HINT: Use transition */
+  transition: var(--transition);
 }
 
 .table tr:hover {
-  /* TODO: Add hover styles for table rows */
-  /* HINT: Change background-color with rgba for transparency */
+  background-color: color-mix(in srgb, var(--light) 80% var(--primary));
 }
 
 /* Badge Styles */
 .badge {
-  /* TODO: Add badge styles */
-  /* HINT: Use display, padding, border-radius, font-size, font-weight, and margin-left */
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: var(--apple-spacing-xs);
 }
 
 .badge-primary {
-  /* TODO: Add primary badge styles */
-  /* HINT: Use background-color and color */
+  background-color: color-mix(in srgb, var(--primary) 10% transparent);
+  color: var(--primary);
+  border: 1px solid color-mix(in srgb, var(--primary) 20% transparent);
 }
 
 .badge-success {
-  /* TODO: Add success badge styles */
-  /* HINT: Use background-color and color */
+  background-color: color-mix(in srgb, var(--success) 10% transparent);
+  color: var(--success);
+  border: 1px solid color-mix(in srgb, var(--success) 20% transparent);
 }
 
 .badge-warning {
-  /* TODO: Add warning badge styles */
-  /* HINT: Use background-color and color */
+  background-color: color-mix(in srgb, var(--warning) 10% transparent);
+  color: var(--warning);
+  border: 1px solid color-mix(in srgb, var(--warning) 20% transparent);
 }
 
 /* Alert Styles */
 .alert {
-  /* TODO: Add alert styles */
-  /* HINT: Use padding, border-radius, margin-bottom, display, align-items, and justify-content */
+  padding: var(--apple-spacing);
+  border-radius: var(--apple-radius);
+  margin-bottom: var(--apple-spacing-lg);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-left: 4px solid var(--primary);
+  background-color: color-mix(in srgb, var(--primary) 5% transparent);
+  box-shadow: var(--apple-shadow-sm);
 }
 
 .alert i {
-  /* TODO: Add icon styles in alerts */
-  /* HINT: Use margin-right and font-size */
+  margin-right: var(--apple-spacing);
+  font-size: 20px;
+  flex-shrink: 0;
 }
 
 .alert-content {
-  /* TODO: Add alert content styles */
-  /* HINT: Use display and align-items */
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 
 .alert-close {
-  /* TODO: Add alert close button styles */
-  /* HINT: Use cursor and font-weight */
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--gray);
+  font-size: 18px;
+  padding: 2px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.alert-close:hover {
+  background-color: color-mix(in srgb, var(--gray) 20% transparent);
+  color: var(--text-color);
 }
 
 .alert-success {
-  /* TODO: Add success alert styles */
-  /* HINT: Use background-color, color, and border-left */
+  border-left-color: var(--success);
+  background-color: color-mix(in srgb, var(--success) 5% transparent);
 }
 
 .alert-warning {
-  /* TODO: Add warning alert styles */
-  /* HINT: Use background-color, color, and border-left */
+  border-left-color: var(--warning);
+  background-color: color-mix(in srgb, var(--warning) 5% transparent);
 }
 
 .alert-info {
-  /* TODO: Add info alert styles */
-  /* HINT: Use background-color, color, and border-left */
+  border-left-color: var(--info);
+  background-color: color-mix(in srgb, var(--info) 5% transparent);
 }
 
 /* Navigation Styles */
 .nav {
-  /* TODO: Add navigation styles */
-  /* HINT: Use display, background-color, border-radius, overflow, and margin-bottom */
+  display: flex;
+  background-color: var(--card-bg);
+  border-radius: var(--apple-radius);
+  overflow: hidden;
+  margin-bottom: var(--apple-spacing-lg);
+  box-shadow: var(--apple-shadow);
+  border: 1px solid var(--border-color);
 }
 
 .nav-item {
-  /* TODO: Add navigation item styles */
-  /* HINT: Use padding, color, text-decoration, transition */
+  padding: var(--apple-spacing) var(--apple-spacing-lg);
+  color: var(--gray);
+  text-decoration: none;
+  transition: var(--transition);
+  flex: 1;
+  text-align: center;
+  font-weight: 500;
 }
 
 .nav-item:hover {
-  /* TODO: Add hover styles for nav items */
-  /* HINT: Change background-color */
+  background-color: color-mix(in srgb, var(--light) 80% var(--primary));
+  color: var(--primary);
 }
 
 .nav-item.active {
-  /* TODO: Add styles for active nav item */
-  /* HINT: Use background-color and font-weight */
+  background-color: var(--primary);
+  color: white;
 }
 
 /* Progress Bar Styles */
 .progress {
-  /* TODO: Add progress bar container styles */
-  /* HINT: Use height, background-color, border-radius, margin, and overflow */
+  height: 8px;
+  background-color: var(--light-gray);
+  border-radius: 4px;
+  margin: var(--apple-spacing) 0;
+  overflow: hidden;
 }
 
 .progress-bar {
-  /* TODO: Add progress bar styles */
-  /* HINT: Use height, border-radius, and transition */
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  background: var(--primary);
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--primary) 30% transparent);
 }
 
-.progress-primary {
-  /* TODO: Add primary progress bar styles */
-  /* HINT: Use background-color */
+.progress-success .progress-bar {
+  background: var(--success);
 }
 
-.progress-success {
-  /* TODO: Add success progress bar styles */
-  /* HINT: Use background-color */
+.progress-primary .progress-bar {
+  background: var(--primary);
 }
 
 /* Pagination Styles */
 .pagination {
-  /* TODO: Add pagination styles */
-  /* HINT: Use display, list-style, padding, and margin */
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: var(--apple-spacing-lg) 0;
+  gap: var(--apple-spacing-xs);
 }
 
 .page-item {
-  /* TODO: Add page item styles */
-  /* HINT: Use margin-right */
+  margin-right: var(--apple-spacing-xs);
 }
 
 .page-link {
-  /* TODO: Add page link styles */
-  /* HINT: Use display, padding, border, border-radius, color, text-decoration, transition, and cursor */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--apple-radius-sm);
+  color: var(--gray);
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  min-width: 40px;
+  font-size: 14px;
+  background-color: white;
 }
 
 .page-link:hover {
-  /* TODO: Add hover styles for page links */
-  /* HINT: Change background-color */
+  background-color: color-mix(in srgb, var(--light) 80% var(--primary));
+  border-color: var(--primary);
+  color: var(--primary);
 }
 
 .page-item.active .page-link {
-  /* TODO: Add styles for active page link */
-  /* HINT: Use background-color, color, and border-color */
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
 }
 
 /* Breadcrumb Styles */
 .breadcrumb {
-  /* TODO: Add breadcrumb styles */
-  /* HINT: Use display, list-style, padding, and margin */
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: var(--apple-spacing) 0;
+  gap: var(--apple-spacing-xs);
 }
 
 .breadcrumb-item {
-  /* TODO: Add breadcrumb item styles */
-  /* HINT: Use display and align-items */
+  display: flex;
+  align-items: center;
 }
 
 .breadcrumb-item:not(:last-child)::after {
-  /* TODO: Add separator for breadcrumb items */
-  /* HINT: Use content, margin, and color */
+  content: "→";
+  margin: 0 var(--apple-spacing-xs);
+  color: var(--gray);
+  font-size: 12px;
 }
 
 .breadcrumb-link {
-  /* TODO: Add breadcrumb link styles */
-  /* HINT: Use color, text-decoration, and cursor */
+  color: var(--primary);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .breadcrumb-link:hover {
-  /* TODO: Add hover styles for breadcrumb links */
-  /* HINT: Add text-decoration */
+  text-decoration: underline;
 }
 
 .breadcrumb-item.active {
-  /* TODO: Add styles for active breadcrumb item */
-  /* HINT: Use color */
+  color: var(--gray);
 }
 
 /* Modal Styles */
 .modal {
-  /* TODO: Add modal styles */
-  /* HINT: Use display, position, top/left, width, height, background-color, z-index, justify-content, and align-items */
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
 }
 
 .modal-content {
-  /* TODO: Add modal content styles */
-  /* HINT: Use background-color, border-radius, width, max-width, padding, and box-shadow */
+  background-color: var(--card-bg);
+  border-radius: var(--apple-radius-lg);
+  width: 90%;
+  max-width: 500px;
+  padding: 0;
+  box-shadow: var(--apple-shadow-xl);
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
 }
 
 .modal-header {
-  /* TODO: Add modal header styles */
-  /* HINT: Use display, justify-content, align-items, and margin-bottom */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--apple-spacing-lg);
+  border-bottom: 1px solid var(--light-gray);
 }
 
 .modal-title {
-  /* TODO: Add modal title styles */
-  /* HINT: Use font-size and color */
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-color);
 }
 
 .modal-close {
-  /* TODO: Add modal close button styles */
-  /* HINT: Use background, border, font-size, cursor, and color */
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--gray);
+  padding: 4px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  background-color: color-mix(in srgb, var(--light) 80% var(--primary));
+  color: var(--primary);
+}
+
+.modal-body {
+  padding: var(--apple-spacing-lg);
+}
+
+.modal-footer {
+  padding: var(--apple-spacing-lg);
+  border-top: 1px solid var(--light-gray);
+  display: flex;
+  gap: var(--apple-spacing);
+  justify-content: flex-end;
 }
 
 /* Tooltip Styles */
 .tooltip {
-  /* TODO: Add tooltip styles */
-  /* HINT: Use position, display, border-bottom, and cursor */
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--gray);
+  cursor: help;
 }
 
 .tooltip .tooltip-text {
-  /* TODO: Add tooltip text styles */
-  /* HINT: Use visibility, width, background-color, color, text-align, border-radius, padding, position, z-index, bottom, left, margin-left, opacity, and transition */
+  visibility: hidden;
+  width: 200px;
+  background-color: color-mix(in srgb, var(--text-color) 95% black);
+  color: white;
+  text-align: center;
+  border-radius: var(--apple-radius-sm);
+  padding: var(--apple-spacing-xs) var(--apple-spacing);
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -100px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 13px;
+  box-shadow: var(--apple-shadow-lg);
 }
 
 .tooltip .tooltip-text::after {
-  /* TODO: Add tooltip arrow styles */
-  /* HINT: Use content, position, top, left, margin-left, border-width, border-style, and border-color */
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--text-color) 95% black) transparent transparent transparent;
 }
 
 .tooltip:hover .tooltip-text {
-  /* TODO: Add hover styles for tooltip */
-  /* HINT: Change visibility and opacity */
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Accordion Styles */
 .accordion {
-  /* TODO: Add accordion styles */
-  /* HINT: Use margin */
+  margin: var(--apple-spacing-lg) 0;
 }
 
 .accordion-item {
-  /* TODO: Add accordion item styles */
-  /* HINT: Use border, border-radius, margin-bottom, and overflow */
+  border: 1px solid var(--border-color);
+  border-radius: var(--apple-radius);
+  margin-bottom: var(--apple-spacing-xs);
+  overflow: hidden;
 }
 
 .accordion-header {
-  /* TODO: Add accordion header styles */
-  /* HINT: Use padding, background-color, cursor, display, justify-content, align-items, and font-weight */
+  padding: var(--apple-spacing);
+  background-color: var(--light);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  color: var(--gray);
+  transition: var(--transition);
+}
+
+.accordion-header:hover {
+  background-color: color-mix(in srgb, var(--light) 80% var(--primary));
+  color: var(--primary);
 }
 
 .accordion-content {
-  /* TODO: Add accordion content styles */
-  /* HINT: Use padding, max-height, overflow, and transition */
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  background-color: var(--card-bg);
 }
 
 .accordion-content.active {
-  /* TODO: Add styles for active accordion content */
-  /* HINT: Use padding and max-height */
+  padding: var(--apple-spacing);
+  max-height: 500px;
 }
 
 /* Tabs Styles */
 .tabs {
-  /* TODO: Add tabs container styles */
-  /* HINT: Use margin */
+  margin: var(--apple-spacing-lg) 0;
 }
 
 .tab-header {
-  /* TODO: Add tab header styles */
-  /* HINT: Use display and border-bottom */
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .tab-link {
-  /* TODO: Add tab link styles */
-  /* HINT: Use padding, cursor, transition, and border-bottom */
+  padding: var(--apple-spacing) var(--apple-spacing-lg);
+  cursor: pointer;
+  transition: var(--transition);
+  border-bottom: 2px solid transparent;
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .tab-link:hover {
-  /* TODO: Add hover styles for tab links */
-  /* HINT: Change color */
+  color: var(--primary);
 }
 
 .tab-link.active {
-  /* TODO: Add styles for active tab link */
-  /* HINT: Use color and border-bottom */
+  color: var(--primary);
+  border-bottom-color: var(--primary);
 }
 
 .tab-content {
-  /* TODO: Add tab content styles */
-  /* HINT: Use padding */
+  padding: var(--apple-spacing-lg) 0;
 }
 
 .tab-pane {
-  /* TODO: Add tab pane styles */
-  /* HINT: Use display property */
+  display: none;
 }
 
 .tab-pane.active {
-  /* TODO: Add styles for active tab pane */
-  /* HINT: Change display */
+  display: block;
 }
 
 /* Dropdown Styles */
 .dropdown {
-  /* TODO: Add dropdown styles */
-  /* HINT: Use position and display */
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-toggle {
-  /* TODO: Add dropdown toggle styles */
-  /* HINT: Use padding, background-color, color, border, border-radius, cursor, display, and align-items */
+  padding: 10px 16px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--apple-radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  min-height: 40px;
+  transition: var(--transition);
 }
 
 .dropdown-toggle::after {
-  /* TODO: Add dropdown toggle indicator */
-  /* HINT: Use content, margin-left, and font-size */
+  content: "▼";
+  margin-left: var(--apple-spacing);
+  font-size: 12px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+  border-color: var(--primary);
+  box-shadow: var(--apple-shadow-sm);
 }
 
 .dropdown-menu {
-  /* TODO: Add dropdown menu styles */
-  /* HINT: Use position, top, left, background-color, border-radius, box-shadow, min-width, z-index, and display */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--card-bg);
+  border-radius: var(--apple-radius);
+  box-shadow: var(--apple-shadow-md);
+  min-width: 160px;
+  z-index: 1000;
+  display: none;
+  border: 1px solid var(--border-color);
+  overflow: hidden;
 }
 
 .dropdown-menu.show {
-  /* TODO: Add styles for visible dropdown menu */
-  /* HINT: Change display */
+  display: block;
 }
 
 .dropdown-item {
-  /* TODO: Add dropdown item styles */
-  /* HINT: Use padding, display, color, text-decoration, and transition */
+  padding: var(--apple-spacing) var(--apple-spacing-lg);
+  display: block;
+  color: var(--gray);
+  text-decoration: none;
+  transition: var(--transition);
+  font-size: 14px;
 }
 
 .dropdown-item:hover {
-  /* TODO: Add hover styles for dropdown items */
-  /* HINT: Change background-color */
+  background-color: color-mix(in srgb, var(--light) 80% var(--primary));
+  color: var(--primary);
 }
 
 /* Toast Styles */
 .toast-container {
-  /* TODO: Add toast container styles */
-  /* HINT: Use position, bottom, right, and z-index */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
 }
 
 .toast {
-  /* TODO: Add toast styles */
-  /* HINT: Use padding, background-color, border-radius, box-shadow, margin-bottom, display, align-items, justify-content, min-width, transform, opacity, and transition */
+  padding: var(--apple-spacing);
+  background-color: var(--card-bg);
+  border-radius: var(--apple-radius);
+  box-shadow: var(--apple-shadow-lg);
+  margin-bottom: var(--apple-spacing-xs);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--primary);
 }
 
 .toast.show {
-  /* TODO: Add styles for visible toast */
-  /* HINT: Use transform and opacity */
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .toast-success {
-  /* TODO: Add success toast styles */
-  /* HINT: Use border-left */
+  border-left-color: var(--success);
 }
 
 .toast-warning {
-  /* TODO: Add warning toast styles */
-  /* HINT: Use border-left */
+  border-left-color: var(--warning);
+}
+
+.toast-info {
+  border-left-color: var(--info);
 }
 
 .toast-close {
-  /* TODO: Add toast close button styles */
-  /* HINT: Use cursor and font-weight */
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--gray);
+  font-size: 18px;
+  padding: 2px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.toast-close:hover {
+  background-color: color-mix(in srgb, var(--light) 80% var(--primary));
+  color: var(--primary);
 }
 
 /* Code Editor Styles */
 .code-editor {
-  /* TODO: Add code editor styles */
-  /* HINT: Use background-color, border-radius, padding, margin, font-family, color, and overflow-x */
+  background-color: var(--light);
+  border-radius: var(--apple-radius);
+  padding: var(--apple-spacing);
+  margin: var(--apple-spacing) 0;
+  font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  color: var(--text-color);
+  overflow-x: auto;
+  border: 1px solid var(--border-color);
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .code-comment {
-  /* TODO: Add code comment styles */
-  /* HINT: Use color */
+  color: var(--gray);
 }
 
 .code-selector {
-  /* TODO: Add code selector styles */
-  /* HINT: Use color */
+  color: var(--primary);
 }
 
 .code-property {
-  /* TODO: Add code property styles */
-  /* HINT: Use color */
+  color: var(--secondary);
 }
 
 .code-value {
-  /* TODO: Add code value styles */
-  /* HINT: Use color */
+  color: var(--success);
 }
 
-/* Theme Selector */
-.theme-selector {
-  /* TODO: Add theme selector styles */
-  /* HINT: Use position, top, right, and z-index */
-}
+/* ========== PANEL & CUSTOMIZATION ========== */
 
-.theme-btn {
-  /* TODO: Add theme button styles */
-  /* HINT: Use padding, background-color, color, border, border-radius, and cursor */
-}
-
-/* Animation Classes */
-.fade-in {
-  /* TODO: Add fade-in animation */
-  /* HINT: Use animation property */
-}
-
-.slide-in {
-  /* TODO: Add slide-in animation */
-  /* HINT: Use animation property */
-}
-
-.bounce {
-  /* TODO: Add bounce animation */
-  /* HINT: Use animation property */
-}
-
-@keyframes fadeIn {
-  /* TODO: Add fadeIn keyframes */
-  /* HINT: Define from and to states with opacity */
-}
-
-@keyframes slideIn {
-  /* TODO: Add slideIn keyframes */
-  /* HINT: Define from and to states with transform and opacity */
-}
-
-@keyframes bounce {
-  /* TODO: Add bounce keyframes */
-  /* HINT: Define keyframe percentages with transform */
-}
-
-/* Panel Header with close button */
 .panel-header {
-  /* TODO: Add panel header styles */
-  /* HINT: Use display, justify-content, align-items, margin-bottom, border-bottom, and padding-bottom */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--apple-spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--apple-spacing);
 }
 
 .panel-close {
-  /* TODO: Add panel close button styles */
-  /* HINT: Use background, border, font-size, cursor, color, and transition */
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--gray);
+  padding: 4px;
+  border-radius: 50%;
+  transition: var(--transition);
 }
 
 .panel-close:hover {
-  /* TODO: Add hover styles for panel close button */
-  /* HINT: Use color and transform */
+  color: var(--primary);
+  transform: scale(1.1);
 }
 
-/* Pull tab that appears on the left edge when panel is closed */
 .panel-pull-tab {
-  /* TODO: Add panel pull tab styles */
-  /* HINT: Use position, top, left, transform, background-color, color, padding, border-radius, cursor, box-shadow, z-index, display, align-items, justify-content, and transition */
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: var(--primary);
+  color: white;
+  padding: 12px 8px;
+  border-radius: 0 var(--apple-radius-lg) var(--apple-radius-lg) 0;
+  cursor: pointer;
+  box-shadow: var(--apple-shadow-md);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-size: 12px;
+  font-weight: 500;
+  min-height: 60px;
 }
 
 .panel-pull-tab:hover {
-  /* TODO: Add hover styles for panel pull tab */
-  /* HINT: Use padding-right and background-color */
+  padding-right: 12px;
+  background-color: color-mix(in srgb, var(--primary) 90%, black);
+  box-shadow: var(--apple-shadow-lg);
 }
 
-/* Customization Panel */
 .customization-panel {
-  /* TODO: Add customization panel styles */
-  /* HINT: Use position, top, left, width, height, background-color, box-shadow, padding, overflow-y, transform, transition, and z-index */
+  position: fixed;
+  top: 0;
+  left: -400px;
+  width: 400px;
+  height: 100vh;
+  background-color: var(--card-bg);
+  box-shadow: var(--apple-shadow-xl);
+  padding: var(--apple-spacing-lg);
+  overflow-y: auto;
+  transform: translateX(0);
+  transition: var(--transition);
+  z-index: 1000;
+  border-right: 1px solid var(--border-color);
 }
 
 .customization-panel.open {
-  /* TODO: Add styles for open customization panel */
-  /* HINT: Use transform */
+  left: 0;
 }
 
 .panel-toggle {
-  /* TODO: Add panel toggle styles */
-  /* HINT: Use position, top, right, z-index, padding, background-color, color, border, border-radius, and cursor */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  padding: 12px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--apple-radius);
+  cursor: pointer;
+  box-shadow: var(--apple-shadow);
+  transition: var(--transition);
 }
 
 .color-option {
-  /* TODO: Add color option styles */
-  /* HINT: Use width, height, border-radius, display, margin, cursor, and border */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
 }
 
 .color-option.active {
-  /* TODO: Add active color option styles */
-  /* HINT: Use border-color */
+  border-color: var(--primary);
+  transform: scale(1.1);
 }
 
 /* Interactive Widgets */
 .interactive-widgets {
-  /* TODO: Add interactive widgets container styles */
-  /* HINT: Use display, grid-template-columns, gap, and margin-bottom */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--apple-spacing-lg);
+  margin-bottom: var(--apple-spacing-xl);
 }
 
 .widget {
-  /* TODO: Add widget styles */
-  /* HINT: Use background-color, border-radius, box-shadow, padding, display, and transition */
+  background-color: var(--card-bg);
+  border-radius: var(--apple-radius);
+  box-shadow: var(--apple-shadow);
+  padding: var(--apple-spacing-lg);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
 }
 
 .widget:hover {
-  /* TODO: Add hover styles for widgets */
-  /* HINT: Use transform and box-shadow */
+  transform: translateY(-2px);
+  box-shadow: var(--apple-shadow-md);
 }
 
 .widget i {
-  /* TODO: Add widget icon styles */
-  /* HINT: Use font-size, color, and margin-right */
+  font-size: 24px;
+  color: var(--primary);
+  margin-bottom: var(--apple-spacing-xs);
+  align-self: flex-start;
 }
 
 .widget-content {
-  /* TODO: Add widget content styles */
-  /* HINT: Use flex property */
+  flex: 1;
 }
 
 .widget h3 {
-  /* TODO: Add widget heading styles */
-  /* HINT: Use margin-top, margin-bottom, color, and font-size */
+  margin: 0 0 var(--apple-spacing-xs) 0;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 600;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  /* TODO: Add responsive styles for mobile */
-  /* HINT: Adjust component-grid, btn-group, nav, and tab-header */
+/* ========== ANIMATIONS ========== */
 
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.bounce {
+  animation: bounce 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(10px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+@media (max-width: 768px) {
   .component-grid {
-    /* Change grid to single column */
+    grid-template-columns: 1fr;
+    gap: var(--apple-spacing);
   }
 
   .btn-group {
-    /* Stack buttons vertically */
+    flex-direction: column;
   }
 
   .nav {
-    /* Make nav items stack vertically */
+    flex-direction: column;
+  }
+
+  .nav-item {
+    text-align: left;
   }
 
   .tab-header {
-    /* Make tab links stack vertically */
+    flex-direction: column;
+  }
+
+  .tab-link {
+    border-bottom: 1px solid var(--border-color);
+    border-right: none;
+  }
+
+  .customization-panel {
+    width: 100%;
+    left: -100%;
+  }
+
+  .panel-pull-tab {
+    min-height: 80px;
+    padding: 16px 8px;
+  }
+
+  .toast {
+    min-width: calc(100vw - 40px);
+    bottom: 10px;
+    right: 10px;
   }
 }
 
-/* ========== PRESERVED WIDGET STYLES ========== */
+/* ========== WIDGET STYLES ========== */
 
-/* Clock Widget */
 #clock {
   font-size: 2rem;
   font-weight: 600;
@@ -884,26 +1662,27 @@ input:checked + .slider-round:before {
 .clock-toggle {
   display: flex;
   margin-top: 10px;
-  border-radius: 5px;
+  border-radius: var(--apple-radius-sm);
   overflow: hidden;
   width: fit-content;
+  border: 1px solid var(--border-color);
 }
 
 .clock-toggle-btn {
-  padding: 5px 10px;
-  background-color: var(--light-gray);
+  padding: 8px 16px;
+  background-color: var(--light);
   border: none;
   cursor: pointer;
   transition: var(--transition);
-  font-size: 0.8rem;
+  font-size: 13px;
+  color: var(--gray);
 }
 
 .clock-toggle-btn.active {
   background-color: var(--primary);
-  color: var(--white);
+  color: white;
 }
 
-/* Analog Clock */
 #analog-clock-container {
   display: flex;
   justify-content: center;
@@ -913,33 +1692,46 @@ input:checked + .slider-round:before {
 #analog-clock {
   width: 150px;
   height: 150px;
+  border-radius: var(--apple-radius);
+  box-shadow: var(--apple-shadow);
 }
 
 #date {
   color: var(--gray);
+  font-size: 14px;
 }
 
-/* Calendar Widget */
 #current-month {
   font-weight: 600;
   color: var(--primary);
-  margin-bottom: 10px;
+  margin-bottom: var(--apple-spacing);
+  font-size: 16px;
 }
 
 .mini-calendar {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 5px;
+  gap: 2px;
+  background-color: transparent;
+  padding: 4px;
+  border-radius: var(--apple-radius-sm);
 }
 
 .calendar-day {
-  width: 30px;
-  height: 30px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 0.9rem;
+  font-size: 12px;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.calendar-day:hover {
+  background-color: color-mix(in srgb, var(--primary) 10% transparent);
 }
 
 .calendar-day.current {
@@ -949,49 +1741,61 @@ input:checked + .slider-round:before {
 }
 
 .calendar-day.day-name {
-  font-weight: bold;
-  color: var(--dark);
+  font-weight: 600;
+  color: var(--text-color);
+  background-color: transparent;
+  border-radius: 0;
 }
 
-/* Mood Widget */
+.calendar-day.empty {
+  cursor: default;
+}
+
 .mood-tracker {
   display: flex;
   justify-content: space-between;
-  margin: 15px 0;
+  margin: var(--apple-spacing) 0;
+  padding: var(--apple-spacing);
+  background-color: var(--light);
+  border-radius: var(--apple-radius-sm);
 }
 
 .mood-emoji {
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: var(--transition);
+  padding: 8px;
+  border-radius: var(--apple-radius-sm);
 }
 
 .mood-emoji:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
+  background-color: color-mix(in srgb, var(--primary) 10% transparent);
 }
 
 #mood-response {
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 13px;
   color: var(--gray);
   height: 20px;
+  margin-top: var(--apple-spacing-xs);
+  font-style: italic;
 }
 
-/* Dark theme overrides for widgets */
-.dark-theme .widget {
-  background-color: var(--card-bg);
+/* Dark theme widget overrides */
+body.dark #date,
+body.dark #mood-response {
+  color: var(--apple-gray-300);
 }
 
-.dark-theme #date,
-.dark-theme #mood-response {
-  color: var(--text-color);
-  opacity: 0.8;
+body.dark .calendar-day.day-name {
+  color: var(--apple-gray-300);
 }
 
 /* Footer Styles */
 .footer {
   margin-top: 50px;
-  padding: 20px 0;
+  padding: var(--apple-spacing-xl) 0;
   background-color: var(--card-bg);
   border-top: 1px solid var(--border-color);
   text-align: center;
@@ -1002,41 +1806,48 @@ input:checked + .slider-round:before {
 }
 
 .footer p {
-  color: var(--text-color);
-  font-size: 0.9rem;
+  color: var(--gray);
+  font-size: 13px;
   margin: 0;
+  font-weight: 400;
 }
 
-/* Dark theme override for footer */
-.dark-theme .footer {
-  background-color: var(--card-bg);
-  border-color: var(--border-color);
+body.dark .footer {
+  background-color: var(--apple-gray-900);
+  border-color: var(--apple-gray-700);
 }
 
 /* Challenge Instructions Section Styling */
 .instruction-section {
   border-left: 4px solid var(--primary);
-  background-color: rgba(67, 97, 238, 0.05);
+  background-color: color-mix(in srgb, var(--primary) 5% transparent);
   position: relative;
+  border-radius: var(--apple-radius);
+  overflow: hidden;
+  box-shadow: var(--apple-shadow);
 }
 
 .instruction-section h2 {
   color: var(--primary);
-  font-size: 1.6rem;
-  border-bottom: 2px solid var(--primary);
-  padding-bottom: 12px;
-  margin-bottom: 20px;
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--apple-spacing) var(--apple-spacing-lg);
+  margin: 0;
+  background-color: var(--light);
+  font-weight: 600;
 }
 
 .instruction-section ol {
-  padding-left: 1.5rem;
-  margin: 1.5rem 0;
+  padding-left: 2rem;
+  margin: var(--apple-spacing-lg);
 }
 
 .instruction-section li {
-  margin-bottom: 12px;
+  margin-bottom: var(--apple-spacing);
   position: relative;
-  padding-left: 10px;
+  padding-left: var(--apple-spacing-xs);
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .instruction-section li::marker {
@@ -1050,18 +1861,80 @@ input:checked + .slider-round:before {
 }
 
 .instruction-section p:last-child {
-  background-color: rgba(67, 97, 238, 0.1);
-  padding: 12px 15px;
-  border-radius: 6px;
-  font-size: 0.95rem;
+  background-color: color-mix(in srgb, var(--primary) 10% transparent);
+  padding: var(--apple-spacing);
+  border-radius: var(--apple-radius-sm);
+  font-size: 13px;
   border-left: 3px solid var(--primary);
+  margin: var(--apple-spacing-lg);
 }
 
-/* Dark theme overrides */
-.dark-theme .instruction-section {
-  background-color: rgba(123, 104, 238, 0.1);
+body.dark .instruction-section {
+  background-color: color-mix(in srgb, var(--primary) 10% transparent);
 }
 
-.dark-theme .instruction-section p:last-child {
-  background-color: rgba(76, 201, 240, 0.1);
+body.dark .instruction-section h2 {
+  background-color: var(--apple-gray-700);
+  color: var(--primary);
+}
+
+body.dark .instruction-section p:last-child {
+  background-color: color-mix(in srgb, var(--primary) 15% transparent);
+}
+
+/* ========== APPLE ENHANCEMENTS ========== */
+
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--gray) 90%, black);
+}
+
+body.dark ::-webkit-scrollbar-track {
+  background: var(--apple-gray-800);
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background: var(--apple-gray-600);
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--apple-gray-500);
+}
+
+/* Accessibility Focus Styles */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: var(--apple-radius-sm);
+}
+
+/* Premium Gradient Buttons */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  box-shadow: 0 4px 14px 0 color-mix(in srgb, var(--primary) 30% transparent);
+}
+
+.btn-primary-gradient:hover {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--primary) 80% black) 0%, var(--secondary) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px 0 color-mix(in srgb, var(--primary) 20% transparent);
 }
